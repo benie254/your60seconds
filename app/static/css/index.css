@@ -29,3 +29,14 @@ body {
     padding-top: 2.5%;
     padding-bottom: 2.5%;
 }
+
+/*thumbs up & down*/
+.fa {
+    font-size: 35px;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 25%;
+}
+.fa:hover {
+    color: darkblue;
+}
