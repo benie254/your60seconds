@@ -101,3 +101,24 @@
 </div>
 
 {% endfor %}
+
+</div>
+
+
+<div class="tab-content">
+  <div  class="container tab-pane active" id="job"><br>
+      {{ macro.displayCategories(Job) }}
+  </div>
+  <div  class="container tab-pane fade" id="ent"><br>
+      {{ macro.displayCategories(Entertainment) }}
+  </div>
+  <div  class="container tab-pane fade"><br>
+    {{ macro.displayCategories(Love)}}
+  </div>
+  <div  class="container tab-pane fade" id="love"><br>
+    {{ macro.displayCategories(Sales)}}
+  </div>
+  <div  class="container tab-pane fade" id="uncat"><br>
+    {{ macro.displayCategories(Uncategorized) }}
+  </div>
+</div>
