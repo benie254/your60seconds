@@ -6,6 +6,10 @@ from ..models import Users
 
 
 class RegistrationForm(FlaskForm):
+    """
+    registers new users
+    """
+
     email = StringField('Your email address...',validators=[InputRequired(),Email()])
     username = StringField('Your username...',validators=[InputRequired()])
     password = PasswordField('Your password...', validators=[InputRequired(),EqualTo('password_confirm',message='Passwords must match')])
@@ -13,15 +17,27 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Sign Up')
 
     def validate_email(self,data_field):
+        """
+        :param data_field: email data
+        :return: validated address--checks if an account exists
+        """
+
         if Users.query.filter_by(email=data_field.data).first():
             raise ValidationError('There is an account with that email')
 
     def validate_username(self,data_field):
+        """
+        :param data_field: username data
+        :return: validated user--checks if username exists
+        """
         if Users.query.filter_by(username=data_field.data).first():
             raise ValidationError('That username exists')
 
 
 class LoginForm(FlaskForm):
+    """
+    signs in existing users
+    """
     email = StringField('Email...',validators=[InputRequired(), Email()])
     password = PasswordField('Password...',validators=[InputRequired()])
     remember = BooleanField('Remember me')

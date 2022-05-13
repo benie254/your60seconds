@@ -6,6 +6,9 @@ from datetime import datetime
 
 
 class Users(UserMixin, db.Model):
+    """
+    defines Users objects
+    """
 
     __tablename__ = 'users'
 
@@ -69,6 +72,10 @@ class Pitch(db.Model):
 
 
 class Comment(db.Model):
+    """
+    defines Comment objects
+    """
+
     __tablename__ = 'comment'
     id = db.Column(db.Integer, primary_key=True)
     pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'), nullable=True)
@@ -80,6 +87,9 @@ class Comment(db.Model):
 
 
 class Upvote(db.Model):
+    """
+    defines Upvote objects
+    """
     __tablename__ = 'upvote'
     id = db.Column(db.Integer, primary_key=True)
     user_upvote = db.Column(db.Integer, default=1)
@@ -109,6 +119,10 @@ class Upvote(db.Model):
 
 
 class Downvote(db.Model):
+    """
+    defines Downvote objects
+    """
+
     __tablename__ = 'downvote'
 
     id = db.Column(db.Integer, primary_key=True)
