@@ -83,3 +83,27 @@ def update_pic(uname):
         db.session.commit()
 
     return redirect(url_for('main.profile',uname=uname))
+
+
+@main.route('/pitch', methods=['GET', 'POST'])
+@login_required
+def pitches():
+    """"
+    :return: pitch details page + data
+    """
+
+    pitches = Pitch.query.all()
+    form = PitchForm()
+
+    if form.validate_on_submit():
+        pitch_title = form.pitch_title.data
+        pitch_category = form.pitch_category.data
+        pitch_content = form.pitch_content.data
+        user_id = current_user._get_current_object().id
+        new_pitch_dict = Pitch(pitch_title=pitch_title, user_id=user_id, pitch_category=pitch_category,
+                               pitch_content=pitch_content)
+        new_pitch_dict.save_pitch()
+
+        return redirect(url_for('main.index'))
+
+    return render_template('pitch.html', form=form, pitches=pitches)
