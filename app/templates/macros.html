@@ -1,0 +1,68 @@
+{% macro displayCategories(pitches) %}
+
+<div class="container">
+
+    {% for pitch_category in pitches %}
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-header">{{pitch_category.pitch_title}}</h5>
+            <h3 class="card-title">{{pitch_category.pitch_category}}</h3>
+            <p class="card-text">{{pitch_category.pitch_content}}</p>
+            <div class="card-footer">
+
+              {% if comments %}
+
+              <div class="row" style="margin-top:2.5%;">
+                <div class="col-md-4" >
+                  <button class="accordion btn">Comments</button>
+                  <div class="panel">
+                    <p style="padding-top:15%;color:black;">
+
+                      {%for comment in comments%}
+
+                      <strong>comnt:</strong> {{comment.comment_message}}
+
+                      {%endfor%}
+
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+                </div>
+                <div class="col-md-4">
+                  <button class="accordion btn">Comment</button>
+                    <div class="panel" style="padding-top:10%;width:150%;">
+                      {{wtf.quick_form(comment_form)}}
+                    </div>
+                </div>
+
+                {%else%}
+
+                <div class="col-md-4">
+                  <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+                </div>
+                <div class="col-md-4" style="padding-top:10%;">
+                  <small>This pitch has no comments yet, but yours can the first!</small>
+                  <div class="col-md-4" style="width:150%">
+                    {{wtf.quick_form(comment_form)}}
+                  </div>
+                </div>
+              </div>
+
+              {%endif%}
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+    </div>
+{% endmacro %}
