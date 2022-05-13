@@ -22,3 +22,10 @@ body {
 .container {
     margin-top: 5%;
 }
+
+/*pitch page*/
+#pitch-container {
+    background-color: #FFFACC;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
