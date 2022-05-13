@@ -16,9 +16,12 @@
 
 {% block content %}
 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<ul class="nav nav-justified nav-fill" role="tablist">
+
+<div class="container">
+  <ul class="nav nav-justified nav-fill" role="tablist" style=margin-bottom:5%;>
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#ent">Entertainment Pitches</a>
     </li>
@@ -34,94 +37,84 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#uncat">Uncategorized Pitches</a>
     </li>
-</ul>
-
-
-<div class="container">
+  </ul>
 
 {% for pitch in pitches %}
 
-<div class="row">
-  <div class="col-sm-4">
-    <div class="card">
+
+  <div class="col-sm-4 text-center">
+    <div class="card" style="float:right;">
       <div class="card-body">
         <h3 class="card-title" style="font-style:bold;">{{pitch.pitch_title}}</h3>
         <h5 class="card-title" style="font-style:italic;">category: {{pitch.pitch_category}}</h5>
-        <p class="card-text">{{pitch.pitch_content}}</p>
+        <p class="card-text" style="padding:2%;">{{pitch.pitch_content}}</p>
         <div class="card-footer">
-
           {% if comments %}
-
           <div class="row" style="margin-top:2.5%;">
             <div class="col-md-4" >
-              <button class="accordion btn">Comments</button>
+              <button class="accordion btn">All Comments</button>
               <div class="panel">
-
                 {%for comment in comments%}
-
                 <p style="padding-top:15%;color:black;">
                   <strong>comnt:</strong> {{comment.comment_message}}
                 </p>
-
                 {%endfor%}
-
               </div>
             </div>
             <div class="col-md-4">
               <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
             </div>
-
             <div class="col-md-4">
               <button class="accordion btn">Comment</button>
+              <div class="panel">
                 <div class="panel" style="padding-top:10%;width:150%;">
                   {{wtf.quick_form(comment_form)}}
                 </div>
+              </div>
             </div>
-
             {%else%}
-
-            <div class="col-md-4">
+            <div class="col-md-6">
               <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
             </div>
-            <div class="col-md-4" style="padding-top:10%;">
-              <small>No Comments for this yet for this post. Be the first to comment</small>
-              <div class="col-md-4" style="width:150%">
+            <div class="col-md-6">
+              <p> No comments yet. </p>
+              <div class="col-md-6" style="width:100%">
                 {{wtf.quick_form(comment_form)}}
               </div>
             </div>
           </div>
-
           {%endif%}
-
         </div>
-
       </div>
     </div>
   </div>
-</div>
+
 
 {% endfor %}
 
 </div>
 
 
-<div class="tab-content">
-  <div  class="container tab-pane active" id="job"><br>
-      {{ macro.displayCategories(Job) }}
-  </div>
-  <div  class="container tab-pane fade" id="ent"><br>
-      {{ macro.displayCategories(Entertainment) }}
-  </div>
-  <div  class="container tab-pane fade"><br>
-    {{ macro.displayCategories(Love)}}
-  </div>
-  <div  class="container tab-pane fade" id="love"><br>
-    {{ macro.displayCategories(Sales)}}
-  </div>
-  <div  class="container tab-pane fade" id="uncat"><br>
-    {{ macro.displayCategories(Uncategorized) }}
-  </div>
-</div>
+<!--<div class="tab-content">-->
+<!--  <div  class="container tab-pane active" id="job"><br>-->
+<!--      {{ macro.displayCategories(Job) }}-->
+<!--  </div>-->
+<!--  <div  class="container tab-pane fade" id="ent"><br>-->
+<!--      {{ macro.displayCategories(Entertainment) }}-->
+<!--  </div>-->
+<!--  <div  class="container tab-pane fade"><br>-->
+<!--    {{ macro.displayCategories(Love)}}-->
+<!--  </div>-->
+<!--  <div  class="container tab-pane fade" id="love"><br>-->
+<!--    {{ macro.displayCategories(Sales)}}-->
+<!--  </div>-->
+<!--  <div  class="container tab-pane fade" id="uncat"><br>-->
+<!--    {{ macro.displayCategories(Uncategorized) }}-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
 
 
 

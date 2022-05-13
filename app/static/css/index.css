@@ -10,9 +10,8 @@ body {
     padding-bottom: 5%;
     margin-bottom: 5%;
     padding-top: 2.5%;
-    margin-right: 5%;
-    margin-left: 5%;
-    /* width: 40%; */
+    /*margin-right: 5%;*/
+    margin-left: 10%;
 }
 .btn {
     top: 5%;
@@ -22,6 +21,10 @@ body {
 .container {
     margin-top: 5%;
 }
+.card-title {
+color: #FFFACC;
+}
+
 
 /*pitch page*/
 #pitch-container {
