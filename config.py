@@ -19,7 +19,7 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = 'davinci.monalissa3@gmail.com'
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    SUBJECT_PREFIX = 'The Pitcher'
+    SUBJECT_PREFIX = 'thePitcher'
     SENDER_EMAIL = 'davinci.monalissa3@gmail.com'
 
 

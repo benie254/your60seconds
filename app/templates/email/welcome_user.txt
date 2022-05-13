@@ -1,10 +1,11 @@
 Hello {{user.username}},
 
 
-Welcome to Your60Seconds!
+Welcome to thePitcher!
 
 
-We have just noticed you signed up to our app and we are delighted to have you :)
+We have just noticed you signed up to our app and we are delighted to have you 😀
+
 Enjoy the pitches of your top categories, and come back for more...cheers!
 
 
