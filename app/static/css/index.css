@@ -2,3 +2,23 @@
 body {
     background-color: #B5D6B2;
 }
+
+/*home page*/
+.col-sm-4 {
+    background-color: #53131E;
+    color: white;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    padding-top: 2.5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    /* width: 40%; */
+}
+.btn {
+    top: 5%;
+    background-color: #FFEFBD;
+    color: black;
+}
+.container {
+    margin-top: 5%;
+}
