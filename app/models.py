@@ -66,3 +66,14 @@ class Pitch(db.Model):
     def get_pitches(cls, id):
         pitches = Pitch.query.filter_by(pitch_id=id).all()
         return pitches
+
+
+class Comment(db.Model):
+    __tablename__ = 'comment'
+    id = db.Column(db.Integer, primary_key=True)
+    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
+    comment_message = db.Column(db.String(255))
+
+    def __repr__(self):
+        return f"Comment : id: {self.id} comment: {self.description}"
