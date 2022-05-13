@@ -38,3 +38,31 @@ class Users(UserMixin, db.Model):
 @login_manager.user_loader
 def load_user(user_id):
     return Users.query.get(int(user_id))
+
+
+class Pitch(db.Model):
+    """
+    defines Pitch objects
+    """
+
+    __tablename__ = 'pitches'
+
+    id = db.Column(db.Integer, primary_key=True)
+    pitch_id = db.Column(db.Integer)
+    pitch_title = db.Column(db.String(255))
+    pitch_content = db.Column(db.String(255))
+    pitch_category = db.Column(db.String(255), index=True, nullable=False)
+    pitch_date = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    pitch_upvote = db.relationship('Upvote', backref='pitch', lazy='dynamic')
+    pitch_downvote = db.relationship('Downvote', backref='pitch', lazy='dynamic')
+    pitch_comment = db.relationship('Comment', backref='pitch', lazy='dynamic')
+
+    def save_pitch(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_pitches(cls, id):
+        pitches = Pitch.query.filter_by(pitch_id=id).all()
+        return pitches
