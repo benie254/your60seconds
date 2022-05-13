@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container" id="profile-container">
+    <div class="row">
+
+<!--        to display username-->
+        <div class="col-md-4" style="background-color:#53131E;color:white;padding-top:1.5%;padding-bottom:1.5%;width:15%;margin-right:15%;">
+            <h3>
+                {{ user.username | capitalize }}
+            </h3>
+
+
+<!--            display user bio-->
+
+            {% if user.bio %}
+            <p>
+                {{ user.bio }}
+            </p>
+            {% else %}
+            <p>
+                {{ user.username | capitalize }} has no bio.
+            </p>
+            {% endif %}
+
+            {% if user == current_user %}
+        <a href="{{ url_for('main.update_profile',uname=user.username) }}" style="margin-top:1.5%;">
+            Edit Profile
+        </a>
+        {% endif %}
+        </div>
+
+<!--        display profile photo-->
+        <div class="col-md-4" style="background-color:#FFEFBD;padding-top:1.5%;padding-bottom:1.5%;">
+
+            {% if user.profile_pic_path %}
+            <img src="{{ url_for('static',filename=user.profile_pic_path) }}" class="img-thumbnail">
+            {% else %}
+            <p>
+                No profile picture.
+            </p>
+            {% endif %}
+
+            {% if user == current_user %}
+            <form action="{{ url_for('main.update_pic',uname=username) }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="photo" class="form-control" required>
+                <input type="submit">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+    {% if current_user %}
+        <h3 class="text-center">You have {{user.pitches.count()}} Pitches</h3>
+        {% for i in user_pitches%}
+        <div class="pitches text-center" style="margin-top:2.5%;">
+            <h5>Title: {{i.pitch_title}}</h5>
+            <h6>Message: {{i.pitch_content}}</h6>
+        </div>
+
+        {%endfor%}
+    {%else%}
+        <h3>You have ) posts</h3>
+    {%endif%}
+</div>
+
+
+{% endblock %}
