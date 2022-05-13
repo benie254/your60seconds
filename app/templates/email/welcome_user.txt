@@ -1,0 +1,15 @@
+Hello {{user.username}},
+
+
+Welcome to Your60Seconds!
+
+
+We have just noticed you signed up to our app and we are delighted to have you :)
+Enjoy the pitches of your top categories, and come back for more...cheers!
+
+
+Best wishes,
+
+B.L,
+
+Benson Lang'at.
