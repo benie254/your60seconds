@@ -13,11 +13,11 @@ thePitcher is built on a database, which helps us store user data and informatio
 
 ## Screenshot
 
-<img src="https://user-images.githubusercontent.com/99865051/168407750-9aced3c0-2cac-42ba-bc63-07cc78575884.png" >
+<img src="https://user-images.githubusercontent.com/99865051/168407909-9fe76430-7b5c-442f-b76e-f75d1ba6af1e.png" >
 
 ## Screenshot #2
 
-<img src="https://user-images.githubusercontent.com/99865051/168407745-dd0b0b81-56b3-449f-9488-8a95663a35fa.png">
+<img src="https://user-images.githubusercontent.com/99865051/168407922-023079e5-1e2e-4d51-b66a-079099abfe22.png">
 
 ## Behavior Driven Development--BDD
 
