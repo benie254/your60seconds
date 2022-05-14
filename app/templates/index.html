@@ -22,11 +22,10 @@
 
 <div class="container">
 
-  <h1 style="font-family:'Oleo Script Swash Caps';">Welcome to thePitcher!</h1>
-  <em style="font-family:'Secular One'"><p>Your favorite pitches hub</p></em>
+  <h1 style="font-family:'Oleo Script Swash Caps';font-size:25" class="text-center">Welcome to thePitcher!</h1>
+  <em style="font-family:'Secular One'" class="text-center"><p>Your favorite pitches hub</p></em>
+  <hr>
 
-  <h4 style="font-family:'Secular One'">Check out some of the top pitches or join the fun and create one. </h4>
-  <p style="font-family:'Secular One'">While at it, why don't you also drop a comment?</p>
 
   <ul class="nav nav-justified nav-fill" role="tablist" style=margin-bottom:5%;>
     <li class="nav-item">
@@ -46,8 +45,10 @@
     </li>
   </ul>
 
-{% for pitch in pitches %}
+  <h4 style="font-family:'Secular One'" class="text-center">Check out some of the top pitches or join the fun and create one. </h4>
+  <p style="font-family:'Secular One'" class="text-center">While at it, why don't you also drop a comment?</p>
 
+{% for pitch in pitches %}
 
   <div class="col-sm-4 text-center">
     <div class="card" style="float:right;">
