@@ -1,6 +1,16 @@
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
 /*all pages*/
 body {
     background-color: #B5D6B2;
+}
+.nav-item {
+font-family:'Permanent Marker';
+font-size:18px;
 }
 
 /*home page*/
@@ -17,12 +27,18 @@ body {
     top: 5%;
     background-color: #FFEFBD;
     color: black;
+    font-family:'Secular One';
 }
 .container {
     margin-top: 5%;
 }
 .card-title {
 color: #FFFACC;
+font-family: 'Cinzel'
+}
+.card-text{
+font-family:'Secular One';
+font-size:16px;
 }
 
 
@@ -35,13 +51,12 @@ color: #FFFACC;
 
 /*thumbs up & down*/
 .fa {
-    font-size: 35px;
     cursor: pointer;
     user-select: none;
     padding-left: 25%;
 }
 .fa:hover {
-    color: darkblue;
+    color: #B5D6B2;
 }
 
 /*home page accordion--for comments*/

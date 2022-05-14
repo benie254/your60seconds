@@ -23,19 +23,19 @@
 <div class="container">
   <ul class="nav nav-justified nav-fill" role="tablist" style=margin-bottom:5%;>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#ent">Entertainment Pitches</a>
+      <a class="nav-link" data-toggle="tab" href="#ent">Entertainment</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#job">Job Pitches</a>
+      <a class="nav-link" data-toggle="tab" href="#job">Job</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#love">Love Pitches</a>
+      <a class="nav-link" data-toggle="tab" href="#love">Love</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#sales">Sales Pitches</a>
+      <a class="nav-link" data-toggle="tab" href="#sales">Sales</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#uncat">Uncategorized Pitches</a>
+      <a class="nav-link" data-toggle="tab" href="#uncat">Uncategorized</a>
     </li>
   </ul>
 
@@ -46,7 +46,7 @@
     <div class="card" style="float:right;">
       <div class="card-body">
         <h3 class="card-title" style="font-style:bold;">{{pitch.pitch_title}}</h3>
-        <h5 class="card-title" style="font-style:italic;">category: {{pitch.pitch_category}}</h5>
+        <h5 class="card-title">category: {{pitch.pitch_category}}</h5>
         <p class="card-text" style="padding:2%;">{{pitch.pitch_content}}</p>
         <div class="card-footer">
           {% if comments %}
@@ -74,7 +74,7 @@
             </div>
             {%else%}
             <div class="col-md-6">
-              <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+              <i onclick="myFunction(this)" class="fa fa-thumbs-up" style="font-size: 50px;"></i>
             </div>
             <div class="col-md-6">
               <p> No comments yet. </p>

@@ -13,7 +13,7 @@
     <div class="row">
 
 <!--        to display username-->
-        <div class="col-md-4" style="background-color:#53131E;color:white;padding-top:1.5%;padding-bottom:1.5%;width:15%;margin-right:15%;">
+        <div class="col-md-4" style="background-color:#53131E;color:white;padding-top:1.5%;padding-bottom:1.5%;width:15%;margin-right:15%;font-family: 'Cinzel';">
             <h3>
                 {{ user.username | capitalize }}
             </h3>
@@ -22,17 +22,17 @@
 <!--            display user bio-->
 
             {% if user.bio %}
-            <p>
+            <p style="font-family:'Secular One'">
                 {{ user.bio }}
             </p>
             {% else %}
-            <p>
+            <p style="font-family:'Secular One'">
                 {{ user.username | capitalize }} has no bio.
             </p>
             {% endif %}
 
             {% if user == current_user %}
-        <a href="{{ url_for('main.update_profile',uname=user.username) }}" style="margin-top:1.5%;">
+        <a href="{{ url_for('main.update_profile',uname=user.username) }}" style="margin-top:1.5%;font-family:'Secular One'">
             Edit Profile
         </a>
         {% endif %}
@@ -44,13 +44,13 @@
             {% if user.profile_pic_path %}
             <img src="{{ url_for('static',filename=user.profile_pic_path) }}" class="img-thumbnail">
             {% else %}
-            <p>
+            <p style="font-family:'Secular One'">
                 No profile picture.
             </p>
             {% endif %}
 
             {% if user == current_user %}
-            <form action="{{ url_for('main.update_pic',uname=username) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ url_for('main.update_pic',uname=username) }}" method="post" enctype="multipart/form-data" style="font-family:'Secular One';">
                 <input type="file" name="photo" class="form-control" required>
                 <input type="submit">
             </form>
@@ -58,11 +58,11 @@
         </div>
     </div>
     {% if current_user %}
-        <h3 class="text-center">You have {{user.pitches.count()}} Pitches</h3>
+        <h3 class="text-center" style="font-family:'Secular One';">You have {{user.pitches.count()}} Pitches:</h3>
         {% for i in user_pitches%}
         <div class="pitches text-center" style="margin-top:2.5%;">
-            <h5>Title: {{i.pitch_title}}</h5>
-            <h6>Message: {{i.pitch_content}}</h6>
+            <h5 style="font-family: 'Cinzel'">Title: {{i.pitch_title}}</h5>
+            <h6 style="font-family: 'Secular One';"><span style="font-family: 'Cinzel'">Message:</span> {{i.pitch_content}}</h6>
         </div>
 
         {%endfor%}
